@@ -1,0 +1,35 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Segoe UI;
+	padding: 20px;
+}
+
+table tr td {
+	font-size: 15px;
+	padding-right: 10px;
+	padding-bottom: 20px;
+}
+
+
+.big {
+	padding: 6px 12px;
+}
+
+.errorMessage {
+	font-style: italic;
+	color: red;
+}
+
+.smallCombobox{
+	display: inline;
+}
+
+.btn-default {
+  color: #333;
+  background-color: #B0B0B0;
+  border-color: black;
+}

@@ -1,0 +1,207 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: Segoe UI;
+}
+
+table tr td{
+	font-size: 20px;
+	padding-right: 10px;
+	padding-bottom: 20px;
+}
+
+#wrapper{
+	margin: 0;
+	padding: 0;
+}
+
+#header{
+	height: 50px;
+	background-color: white;
+	border: solid 1px black;
+}
+
+#logo-slogan img{
+	width: 60px;
+	height:40px;
+}
+
+#logo-slogan h2{
+	color: black;
+	margin: 0;
+}
+
+#shopping-card p{
+	padding-right: 10px;
+	margin: 0;
+}
+
+#shopping-card img{
+	padding-top: 10px;
+	padding-right: 10px;
+	width: 30px;
+	height: 30px;
+}
+
+#body{
+	
+}
+
+#menu-search{
+	background-color: black;
+	height: 32px;
+}
+
+ul.menu-horizontal {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+ul.menu-horizontal li:hover{
+	color: yellow;
+}
+
+ul.menu-horizontal:after {
+    content: '';
+    clear: both;
+    float: none;
+    display: block;
+}
+
+ul.menu-horizontal li {
+	color: white;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    height: 100%;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    float: left;
+	border-right: solid 2px green;
+}
+
+/* The magic happens here! */
+ul.menu-horizontal li:before {
+    content: '';
+    display: inline;
+    height: 100%;
+    vertical-align: middle;
+}
+
+ul.menu-horizontal a{
+	background-color: black;
+}
+
+#search{
+	padding-top: 4px;
+	width: 300px;
+}
+
+#banner img{
+	width: 100%;
+	height: 400px;
+}
+
+.btnRed{
+	display: inline-block;
+	padding: 3px 6px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	background-color: red;
+	border: none;
+}
+
+.txtBlue{
+	width: 200px;
+	height: 24px;
+	font-size: 14px;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+#new-product{
+	width: 100%;
+	height: auto;
+}
+
+#new-product h3{
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#product-boxes-wrapper{
+	height: auto;
+	display:table;
+	/*margin-left: 10px;*/
+	margin-right: 10px;
+}
+
+.product-box{
+	float: left;
+	width: 298px;
+	height: 250px;
+	margin: 5px;
+	border: 1px solid black;
+	text-align: center;
+}
+
+.product-box img{
+	padding: 5px 14px 0 20px;
+	width: 288px;
+	height: 180px;
+}
+
+.product-box p{
+	margin: 0;
+}
+
+#footer{
+	height: 100px;
+	background-color: gray;
+	text-align: center;
+}
+
+#footer img{
+	width: 200px;
+	height: 50px;
+}
+
+#footer h4{
+	color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts 
+Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="danhSachSanPhamForm" type="form.DanhSachSanPhamForm" />
+		<form-bean name="sanPhamForm" type="form.SanPhamForm" />
+		<form-bean name="login" type="form.LoginForm" />
+		<form-bean name="listCus" type="form.CustomerForm"></form-bean>
+		<form-bean name="customerForm" type="form.CustomerForm"></form-bean>
+		<form-bean name="trangChuForm" type="form.TrangChuForm"></form-bean>
+		<form-bean name="lapRapForm" type="form.LapRapForm"></form-bean>
+		<form-bean name="danhSach" type="form.BaoHanhForm"></form-bean>
+		<form-bean name="danhSach1" type="form.BaoHanhForm"></form-bean>
+		<form-bean name="hoaDon" type="form.SanPhamForm"></form-bean>
+		<form-bean name="baoHanhForm" type="form.BaoHanhForm"></form-bean>
+		<form-bean name="dsram" type ="form.RamForm"></form-bean>
+  		<form-bean name="ramForm" type = "form.RamForm"></form-bean>
+		<form-bean name="dsmain" type ="form.MainForm"></form-bean>
+  		<form-bean name="mainForm" type = "form.MainForm"></form-bean>
+  		<form-bean name="danhSachBoPhanForm" type ="form.DanhSachBoPhanForm"></form-bean>
+  		<form-bean name="boPhanForm" type = "form.BoPhanForm"></form-bean>
+  		<form-bean name="dschip" type ="form.ChipForm"></form-bean>
+  		<form-bean name="chipForm" type = "form.ChipForm"></form-bean>
+  		<form-bean name="dssplr" type ="form.SanPhamLapRap1Form"></form-bean>
+  		<form-bean name="ctsplrForm" type = "form.SanPhamLapRap1Form"></form-bean>
+  		
+  	
+		<form-bean name="thongKeForm" type="form.ThongKeForm"></form-bean>
+		
+		<form-bean name="thongKeBieuDoNamForm" type="form.ThongKeBieuDoNamForm"></form-bean>
+
+		<!-- phan nay cua TuanDM -->
+		<form-bean name="ordersListForm" type="form.OrdersListForm" />
+		<form-bean name="orderForm" type="form.OrderForm" />
+		<form-bean name="orderDetailForm" type="form.OrderDetailForm" />
+		<form-bean name="orderDetailListForm" type="form.OrderDetailListForm" />
+		<form-bean name="thongKeTheoHangSanXuatForm" type="form.ThongKeTheoHangSanXuatForm">
+		</form-bean>
+		
+	</form-beans>
+	<action-mappings>
+		
+		<action input="/home.jsp" name="thongKeForm" path="/thongKeTheoThang-soLuong"
+			scope="request" type="action.ThongKeTheoThangAction" validate="true">
+			<forward name="thanhCong" path="/nhapThongKeTheoThang.jsp"></forward>
+			<forward name="thanhCong2" path="/thongKeTheoThang.jsp"></forward>
+		</action>
+		
+		<action input="/home.jsp" name="thongKeForm" path="/thongKeTheoNam-soLuong"
+			scope="request" type="action.ThongKeTheoNamAction" validate="true">
+			<forward name="thanhCong" path="/nhapThongKeTheoNam.jsp"></forward>
+			<forward name="thanhCong2" path="/thongKeTheoNam.jsp"></forward>
+		</action>
+		
+		
+		
+		<action input="/home.jsp" name="thongKeBieuDoNamForm" path="/thongKeBieuDoNam-soLuong"
+			scope="request" type="action.ThongKeBieuDoNamAction" validate="true">
+			<forward name="thanhCong" path="/nhapThongKeBieuDoNam.jsp"></forward>
+			<forward name="thanhCong2" path="/thongKeBieuDoNam.jsp"></forward>
+		</action>
+		
+		<action input="/home.jsp" name="thongKeTheoHangSanXuatForm" path="/thongKeTheoHangSanXuat-soLuong"
+			scope="request" type="action.ThongKeTheoHangSanXuatAction" validate="true">
+			<forward name="thanhCong" path="/thongKeTheoHangSanXuat.jsp"></forward>
+		</action>
+		
+		<action input="/lapRapSanPham.jsp" name="lapRapForm" path="/laprapsanpham"
+			scope="request" type="action.LapRapAction" validate="true">
+			<forward name="LapRap" path="/lapRapSanPham.jsp"></forward>
+			<forward name="oke" path="/danhsachlaprap.do"></forward>
+			<forward name="themError" path="/lapRapSanPham.jsp"></forward>
+		</action>
+
+		<action input="/listDanhSachLapRap.jsp" name="lapRapForm" path="/danhsachlaprap"
+			scope="request" type="action.ShowListLapRapSanPhamAction">
+			<forward name="listChuot" path="/listDanhSachLapRap.jsp"></forward>
+		</action>
+		<action input="/homeLapTop.jsp" name="trangChuForm" path="/home-page"
+			scope="session" type="action.TrangChuAction">
+			<forward name="thanhCong" path="/home.jsp" />
+			<forward name="thanhCong2" path="/homeCon.jsp" />
+		</action>
+		
+		<action input="/doHang.jsp" name="sanPhamForm" path="/sua-doHang"
+			scope="session" type="action.SuaDoHangAction">
+			<forward name="thanhCong" path="/doHang.jsp" />
+		</action>
+
+		<action input="/doHang.jsp" name="sanPhamForm" path="/xoa-doHang"
+			scope="session" type="action.XoaDoHangAction">
+			<forward name="thanhCong" path="/doHang.jsp" />
+		</action>
+
+		<action input="/doHang.jsp" path="/do-hang" scope="session"
+			type="action.XuLyDoHangAction">
+			<forward name="thanhCong" path="/doHang.jsp" />
+		</action>
+
+		<action input="/doHang.jsp" name="sanPhamForm" path="/them-donHang" scope="session"
+			type="action.ThemDonHangAction">
+			<forward name="thanhCong" path="/hoaDon.jsp" />
+		</action>
+		
+<!-- 		IN HOA DON -->	
+		
+		
+		<action input="/hoaDon.jsp" name="hoaDon" path="/hoa-don"
+			scope="request" type="action.HoaDonAction">
+			<forward name="hoaDon" path="/hoaDon.jsp"></forward>
+		</action>
+
+<!-- 		END -->
+
+		<action input="/homeLapTop.jsp" name="trangChuForm" path="/dat-hang"
+			scope="session" type="action.DatHangAction">
+			<forward name="thanhCong" path="/home.jsp" />
+		</action>
+
+		<action input="/quanLyDanhSachSanPham.jsp" name="danhSachSanPhamForm"
+			path="/quanLySanPham" scope="session" type="action.DanhSachSanPhamAction">
+			<forward name="thanhCong" path="/quanLyDanhSachSanPham.jsp" />
+			<forward name="thanhCong2" path="/trangChuaPhanTrang.jsp" />
+		</action>
+
+
+		<action input="/suaSanPham.jsp" name="sanPhamForm" path="/suaSP"
+			scope="session" type="action.SuaSanPhamAction" validate="true">
+			<forward name="suaSanPham" path="/suaSanPham.jsp" />
+			<forward name="suaSPerror" path="/suaSanPham.jsp" />
+			<forward name="suaSanPhamXong" path="/quanLySanPham.do?soTrang=1"
+				redirect="true" />
+		</action>
+
+
+
+		<action input="/suaSanPham.jsp" name="sanPhamForm" path="/xoaSP"
+			scope="session" type="action.XoaSanPhamAction" validate="true">
+			<forward name="xoaThanhCong" path="/quanLySanPham.do?soTrang=1"
+				redirect="true" />
+		</action>
+		
+		
+		<action input="/home.jsp" name="sanPhamForm" path="/chi-tietSP"
+			scope="session" type="action.ChiTietSanPhamAction" validate="true">
+			<forward name="thanhCong" path="/chiTietSanPham.jsp" />
+		</action>
+
+
+
+		<action input="/themSanPham.jsp" name="sanPhamForm" path="/themSP"
+			scope="session" type="action.ThemSanPhamAction" validate="true">
+			<forward name="themSanPham" path="/themSanPham.jsp" />
+			<forward name="themSPerror" path="/themSanPham.jsp" />
+			<forward name="themSanPhamXong" path="/quanLySanPham.do?soTrang=1"
+				redirect="true" />
+		</action>
+
+
+		<action input="/Login.jsp" name="login" path="/login" scope="request"
+			type="action.LoginAction" validate="true">
+			<forward name="thanhCong" path="/trangChuQuanLy.jsp"
+				redirect="true" />
+			<forward name="thatBai" path="/Login.jsp" />
+		</action>
+		
+
+<!-- Cấu hình khách hàng -->
+		<action input="/Login.jsp" name="listCus" path="/list-cus"
+			scope="request" type="action.CustomerAction">
+			<forward name="listCus" path="/ListCustomer.jsp"></forward>
+		</action>
+
+
+		<action input="/Login.jsp" name="listCus" path="/currentCus"
+			scope="request" type="action.CurrentCustomerAction">
+			<forward name="currentCus" path="/ListCustomer.jsp"></forward>
+		</action>
+
+		<action input="/Login.jsp" name="listCus" path="/allCus" scope="request"
+			type="action.AllCustomerAction">
+			<forward name="allCus" path="/ListCustomerAll.jsp"></forward>
+		</action>
+
+		<action input="/addCustomer.jsp" name="customerForm" path="/addCus"
+			scope="request" type="action.AddCustomerAction" validate="true">
+			<forward name="addCus" path="/addCustomer.jsp"></forward>
+			<forward name="addCustomerError" path="/addCustomer.jsp"></forward>
+			<forward name="addComplete" path="/list-cus.do"></forward>
+		</action>
+		<action input="/Login.jsp" name="customerForm" path="/delCus"
+			scope="request" type="action.DeleteCustomerAction">
+			<forward name="delComplete" path="/list-cus.do" redirect="true"></forward>
+		</action>
+		<action input="/EditCustomer.jsp" name="customerForm" path="/editCus"
+			scope="request" type="action.EditCustomerAction">
+			<forward name="editCus" path="/EditCustomer.jsp"></forward>
+			<forward name="editCustomerError" path="/EditCustomer.jsp"></forward>
+			<forward name="editComplete" path="/list-cus.do" redirect="true"></forward>
+		</action>
+<!-- Hết -->
+
+		<action input="/Login.jsp" name="login"
+			path="/login" scope="request" type="action.LoginAction" validate="true">
+	    <forward name="thanhCong" path="/quanLySanPham.do?soTrang=1" redirect="true" />
+	    <forward name="thatBai" path="/Login.jsp" />
+		</action>
+<!-- Cấu hình bảo hành cho khách hàng -->
+		<action input="/DanhSachBaoHanhDaSuaKH.jsp" name="danhSach1" path="/da-sua"
+			scope="request" type="action.BaoHanhKHAction">
+			<forward name="danhSach1" path="/DanhSachBaoHanhDaSuaKH.jsp"></forward>
+		</action>
+<!-- Hết -->
+
+<!-- Cấu hình bảo hành của quản lý -->
+		<action input="/Login.jsp" name="danhSach" path="/danh-sach"
+			scope="request" type="action.BaoHanhAction">
+			<forward name="danhSach" path="/DanhSachBaoHanh.jsp"></forward>
+		</action>
+		<action input="/Login.jsp" name="danhSach" path="/danhSach"
+			scope="request" type="action.BaoHanhAction">
+			<forward name="danhSach" path="/DanhSachBaoHanh.jsp"></forward>
+		</action>
+		<action input="/Login.jsp" name="danhSach" path="/thongTin"
+			scope="request" type="action.ThongTinAction">
+			<forward name="thongTin" path="/ThongTinBaoHanh.jsp"></forward>
+		</action>
+		<action input="/Login.jsp" name="danhSach" path="/daSua" scope="request"
+			type="action.BaoHanhDaSuaAction">
+			<forward name="daSua" path="/DanhSachBaoHanhDaSua.jsp"></forward>
+		</action>
+		<action input="/Login.jsp" name="danhSach"
+				path="/traBH" scope="request" type="action.TraMayAction">
+			<forward name="traBH" path="/danh-sach.do" redirect="true"></forward>
+	</action>
+		<action input="/Login.jsp" name="danhSach" path="/dangSua"
+			scope="request" type="action.BaoHanhDangSuaAction">
+			<forward name="dangSua" path="/DanhSachBaoHanhDangSua.jsp"></forward>
+		</action>
+		<action input="/ThemMoiBaoHanh.jsp" name="baoHanhForm" path="/themBH"
+			scope="request" type="action.ThemMoiBaoHanhAction" validate="true">
+			<forward name="them" path="/ThemMoiBaoHanh.jsp"></forward>
+			<forward name="themError" path="/ThemMoiBaoHanh.jsp"></forward>
+			<forward name="themThanhCong" path="/danh-sach.do"></forward>
+		</action>
+		<action input="/ThemBaoHanhTiep.jsp" name="baoHanhForm" path="/themTiepBH"
+			scope="request" type="action.ThemBaoHanhTiepAction" validate="true">
+			<forward name="themTiep" path="/ThemMoiBaoHanh.jsp"></forward>
+			<forward name="themError" path="/ThemMoiBaoHanh.jsp"></forward>
+			<forward name="themTiepThanhCong" path="/danh-sach.do"></forward>
+		</action>
+
+		<action input="/SuaBaoHanh.jsp" name="baoHanhForm" path="/suaBH"
+			scope="request" type="action.SuaBaoHanhAction">
+			<forward name="sua" path="/SuaBaoHanh.jsp"></forward>
+			<forward name="suaError" path="/SuaBaoHanh.jsp"></forward>
+			<forward name="suaThanhCong" path="/danh-sach.do" redirect="true"></forward>
+		</action>
+		<action input="/SuaBaoHanh.jsp" name="baoHanhForm" path="/suaBH"
+			scope="request" type="action.SuaBaoHanhAction">
+			<forward name="sua" path="/SuaBaoHanh.jsp"></forward>
+			<forward name="suaError" path="/SuaBaoHanh.jsp"></forward>
+			<forward name="suaThanhCong" path="/danh-sach.do" redirect="true"></forward>
+		</action>
+<!-- Hết -->
+
+		<!-- TuanDM -->
+		<!-- Cau hinh cho man hinh don dat hang, phan quyen admin -->
+
+		<action path="/ordersList" name="ordersListForm" scope="request"
+			type="action.ShowOrdersListAction">
+			<forward name="showOrdersList" path="/showOrdersList.jsp" />
+		</action>
+
+		<action path="/deliveredConfirm" input="/showOrdersList.jsp"
+			scope="request" name="ordersListForm" type="action.DeliveredConfirmAction">
+			<forward name="success" path="/ordersList.do" redirect="true" />
+			<forward name="failed" path="/showOrdersList.jsp" />
+		</action>
+
+		<action path="/addOrder" input="/addOrder.jsp" scope="request"
+			name="orderForm" type="action.AddOrderAction">
+			<forward name="success" path="/ordersList.do" redirect="true" />
+			<forward name="failed" path="/addOrder.jsp" />
+			<forward name="firstShowScreen" path="/addOrder.jsp" />
+		</action>
+
+		<action path="/editOrder" input="/editOrder.jsp" scope="request"
+			name="orderForm" type="action.EditOrderAction">
+			<forward name="success" path="/ordersList.do" redirect="true" />
+			<forward name="failed" path="/editOrder.jsp" />
+			<forward name="firstShowScreen" path="/editOrder.jsp" />
+		</action>
+
+		<action path="/showOrderDetail" name="orderDetailListForm"
+			scope="request" type="action.ShowOrderDetailListAction">
+			<forward name="showOrderDetailList" path="/showOrderDetailList.jsp" />
+		</action>
+
+		<action path="/deleteOrder" input="/showOrderList.jsp" scope="request"
+			name="orderListForm" type="action.DeleteOrderAction">
+			<forward name="success" path="/ordersList.do" redirect="true" />
+			<forward name="failed" path="/showOrderList.jsp" />
+		</action>
+
+		<!-- Phan cau hinh cho chuc nang them sua xoa chi tiet don hang -->
+
+		<action path="/addOrderDetail" input="/addOrderDetail.jsp"
+			scope="request" name="orderDetailForm" type="action.AddOrderDetailAction">
+			<forward name="success" path="/showOrderDetail.do" redirect="true" />
+			<forward name="failed" path="/addOrderDetail.jsp" />
+			<forward name="firstShowScreen" path="/addOrderDetail.jsp" />
+		</action>
+
+		<action path="/editOrderDetail" input="/editOrderDetail.jsp"
+			scope="request" name="orderDetailForm" type="action.EditOrderDetailAction">
+			<forward name="success" path="/showOrderDetail.do" redirect="true" />
+			<forward name="failed" path="/editOrderDetail.jsp" />
+			<forward name="firstShowScreen" path="/editOrderDetail.jsp" />
+		</action>
+
+		<action path="/deleteOrderDetail" input="/showOrderDetailList.jsp"
+			scope="request" name="orderDetailListForm" type="action.DeleteOrderDetailAction">
+			<forward name="success" path="/showOrderDetail.do" redirect="true" />
+			<forward name="failed" path="/showOrderDetailList.jsp" />
+		</action>
+
+		<!-- Cau hinh action lay danh sach ten sp -->
+		<action path="/getArrSanPham" name="orderDetailForm"
+			type="action.GetTenSanPhamAction">
+			<forward name="getAjax" path="/ajax-tenSP.jsp" />
+		</action>
+		<action path="/getMaLoaiSP" name="orderDetailForm" type="action.GetMaLoaiSPAction">
+			<forward name="getAjax" path="/ajax-maLoaiSP.jsp" />
+		</action>
+
+		<!-- ket thuc TuanDM -->
+<!-- Cấu hình Ram -->
+    	<action input="/Login.jsp" name="dsram" path="/danh-sach-ram"
+			scope="request" type="action.RamAction">
+			<forward name="dsram" path="/DanhSachRam.jsp"></forward>
+		</action>
+	<action input="/Login.jsp" name ="dsram"
+					path="/danh-sach-ram" scope="request" type="action.RamAction">
+		<forward name="dsram" path="/DanhSachRam.jsp"></forward>
+	</action>
+
+	<action input="/ThemRam.jsp" name="ramForm"
+			path="/themRam" scope="request" type="action.ThemRamAction" validate="true">
+			<forward name="them" path="/ThemRam.jsp"></forward>
+			<forward name="themError" path="/ThemRam.jsp"></forward>
+			<forward name="themThanhCong" path="/danh-sach-ram.do"></forward>
+	</action>
+	<action input="/XoaRam.jsp" name="ramForm"
+			path="/xoaRam" scope="request" type="action.XoaRamAction">
+			<forward name="xoaThanhCong" path="/danh-sach-ram.do" redirect="true"></forward>
+	</action>
+	<action input="/SuaRam.jsp" name="ramForm"
+			path="/suaRam" scope="request" type="action.SuaRamAction">
+			<forward name="sua" path="/SuaRam.jsp"></forward>
+			<forward name="suaError" path="/SuaRam.jsp"></forward>
+			<forward name="suaThanhCong" path="/danh-sach-ram.do" redirect="true"></forward>
+	</action>
+	<!-- Hết Ram -->
+	<!-- Cấu hình mainboard -->
+	<action input="/Login.jsp" name ="dsmain"
+					path="/danh-sach-main" scope="request" type="action.MainAction">
+		<forward name="dsmain" path="/DanhSachMain.jsp"></forward>
+	</action>
+
+	<action input="/ThemMain.jsp" name="mainForm"
+			path="/themMain" scope="request" type="action.ThemMainAction" validate="true">
+			<forward name="them" path="/ThemMain.jsp"></forward>
+			<forward name="themError" path="/ThemMain.jsp"></forward>
+			<forward name="themThanhCong" path="/danh-sach-main.do"></forward>
+	</action>
+	<action input="/danh-sach-main.do" name="mainForm"
+			path="/xoaMain" scope="request" type="action.XoaMainAction">
+			<forward name="xoaThanhCong" path="/danh-sach-main.do" redirect="true"></forward>
+	</action>
+	<action input="/SuaMain.jsp" name="mainForm"
+			path="/suaMain" scope="request" type="action.SuaMainAction">
+			<forward name="sua" path="/SuaMain.jsp"></forward>
+			<forward name="suaError" path="/SuaMain.jsp"></forward>
+			<forward name="suaThanhCong" path="/danh-sach-main.do" redirect="true"></forward>
+	</action>
+	<!-- Hết -->
+<!-- Cấu hình bộ phận -->
+	<action input="/Login.jsp" name ="danhSachBoPhanForm"
+					path="/danh-sach-bo-phan" scope="request" type="action.DanhSachBoPhanAction">
+		<forward name="dsBoPhan" path="/DanhSachBoPhan.jsp"></forward>
+	</action>
+
+	<action input="/ThemBoPhan.jsp" name="boPhanForm"
+			path="/themBP" scope="request" type="action.ThemBoPhanAction" validate="true">
+			<forward name="them" path="/ThemBoPhan.jsp"></forward>
+			<forward name="themError" path="/ThemBoPhan.jsp"></forward>
+			<forward name="themThanhCong" path="/danh-sach-bo-phan.do"></forward>
+	</action>
+	<action input="/danh-sach-bo-phan.do" name="boPhanForm"
+			path="/xoaBP" scope="request" type="action.XoaBoPhanAction">
+			<forward name="xoaThanhCong" path="/danh-sach-bo-phan.do" redirect="true"></forward>
+	</action>
+	<action input="/SuaBoPhan.jsp" name="boPhanForm"
+			path="/suaBP" scope="request" type="action.SuaBoPhanAction">
+			<forward name="sua" path="/SuaBoPhan.jsp"></forward>
+			<forward name="suaError" path="/SuaBoPhan.jsp"></forward>
+			<forward name="suaThanhCong" path="/danh-sach-bo-phan.do" redirect="true"></forward>
+	</action>
+	<!-- Hết -->
+	<!-- Cấu hình chip -->
+	<action input="/Login.jsp" name ="dschip"
+					path="/danh-sach-chip" scope="request" type="action.ChipAction">
+		<forward name="dschip" path="/DanhSachChip.jsp"></forward>
+	</action>
+
+	<action input="/ThemChip.jsp" name="chipForm"
+			path="/themChip" scope="request" type="action.ThemChipAction" validate="true">
+			<forward name="them" path="/ThemChip.jsp"></forward>
+			<forward name="themError" path="/ThemChip.jsp"></forward>
+			<forward name="themThanhCong" path="/danh-sach-chip.do"></forward>
+	</action>
+	<action input="/danh-sach-chip.do" name="chipForm"
+			path="/xoaChip" scope="request" type="action.XoaChipAction">
+			<forward name="xoaThanhCong" path="/danh-sach-chip.do" redirect="true"></forward>
+	</action>
+	<action input="/SuaChip.jsp" name="chipForm"
+			path="/suaChip" scope="request" type="action.SuaChipAction">
+			<forward name="sua" path="/SuaChip.jsp"></forward>
+			<forward name="suaError" path="/SuaChip.jsp"></forward>
+			<forward name="suaThanhCong" path="/danh-sach-chip.do" redirect="true"></forward>
+	</action>
+	<!-- Hết -->
+	<!-- Cấu hình hiển thị chi tiết lắp ráp -->
+	<action input="/Login.jsp" name ="dssplr"
+					path="/danh-sach-splr" scope="request" type="action.DanhSachLapRapAction">
+		<forward name="dssplr" path="/DanhSachSanPhamLapRap.jsp"></forward>
+	</action>
+
+	
+	<action input="/ChiTietDanhSachLapRap.jsp" name="ctsplrForm"
+			path="/chiTiet" scope="request" type="action.ChiTietDanhSachLapRapAction">
+			<forward name="dsctsplr" path="/ChiTietDanhSachLapRap.jsp"></forward>
+			
+	</action>
+	<!-- Hết -->
+	</action-mappings>
+	<message-resources parameter="action.ApplicationResources" />
+</struts-config>
